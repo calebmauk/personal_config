@@ -1,38 +1,120 @@
-""" edit
-set tabstop=4           " number of visual spaces per TAB
-set shiftwidth=4        " number of spaces to use for each step of (auto)indent
-set softtabstop=4       " number of spaces in tab when editing
-set expandtab           " use spaces instead of TAB
-set autoindent          " copy indent from current line when starting new line
-set smartindent         " even better autoindent
 
-""" display
-colorscheme badwolf     " schemes: badwolf, elflord, murphy, slate
-syntax enable           " enable syntax processing
-filetype indent on      " load filetype-specific indent files
-set number              " show line numbers
-set showcmd             " show command in bottom bar
-set cursorline          " highlight current line
-set wrap                " wrap lines
-set wildmenu            " visual autocomplete for command menu
-set lazydraw            " redraw only when we need to
-set showmatch           " highlight matching [{()}]
-set laststatus=2        " always show statusline (even with only single window)
-set ruler               " show cursor line/col numbers on the statusline
-set vb t_vb=            " disable both audio and visual bells
+set nocompatible
 
-""" actions
-inoremap jk <esc>       " jk is escape
+set noesckeys
+set ttimeout
+set timeoutlen=1000
+set ttimeoutlen=5
 
-""" search
-set incsearch           " search as charaters are entered
-set hlsearch            " highlight matches
-nnoremap <CR> :nohlsearch<CR><CR>   " turn off search highlighting with <CR> (carriage-return)
 
-""" movement
-set mouse=a
-" remap QUERTY to Dvorak ~AND~ move the locations
-noremap h h             " (left) dvorak h = querty h, but in a different spot
-noremap c k             " (up) dvorak c
-noremap t j             " (down) dvorak t
-noremap l n             " (right) dvorak l
+
+
+"////////////// Display
+
+set hidden
+syntax on       " syntax highlighting on
+let mapleader=","
+colorschem elflord
+set ruler
+set number      " line numbers on
+set title       " displays the open file's name
+set mouse=a     " enables mouse scrolling/resizing
+set showcmd
+set showmode
+set autoread
+set wrap        " wrap lines
+set wildmenu    " visual autocomplete for command menu
+set showmatch   " highlight matching [{()}]
+set vb t_vb=    " disable both audio and visual bells
+set laststatus=2
+
+filetype plugin on
+filetype indent on  " load filetype-specific indent files
+au FileType py set autoindent
+au FileType py set smartindent
+au FileType py set textwidth=79 " PEP 8 Friendly
+
+au BufReadPost *.vue set syntax=html " use html syntax highlighting for Vue files
+
+
+"////////////// Search
+
+set hlsearch    " highlight search matches
+set showmatch   " highlight search matches ??
+set ignorecase  " case-insensitive search
+set smartcase   " case-sensitive search when query includes capitals
+set incsearch   " search as charaters are entered
+" :noh      removes search match highlighting
+
+" turn off search highlighting with <CR> (carriage-return)
+nnoremap <CR> :nohlsearch<CR><CR> 
+
+
+
+
+
+"////////////// Code
+
+set autoindent
+set smartindent
+set cindent
+set smarttab
+set softtabstop=4   " tab = 4 spaces
+set shiftwidth=4
+set tabstop=4
+set expandtab       " use spaces instead of tabs
+
+
+"////////////// Editing
+
+set backspace=indent,eol,smart  " <Bksp> editing is unrestricted
+set history=1000
+inoremap jk <esc>               " jk is escape
+
+"////////////// Other
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
+
+
+"////////////// Dvorak Key Bindings
+" cursor movement (cthn) (like gaming)
+" no h h (just changes location)
+no c k
+no t j
+no n l
+
+" get rid of f
+no l f
+
+" search next to m
+no m n
+
+" remap c
+no f c
+
+" :,s command
+no s :
+no S :
+
+no k d
+no l n
+no L N
+
+" - eol, _ bol
+no - $
+no _ ^
+
+" window moement
+" N nextwindow, D swapwindows
+no N <C-w><C-w>
+no T <C-w><C-r>
+no D <C-w><C-r>
+
+" shift navigation jumping movements for chtn
+nnoremap H <C-Left>
+nnoremap N <C-Right>
+inoremap <A-H> <C-Left>
+inoremap <A-H> <C-Right>
+
+

@@ -1,0 +1,14 @@
+\x auto
+\pset border 2
+\pset linestyle 'unicode'
+
+-- Try to fit the returned queries in 200 columns and wrap as needed
+\pset columns 200
+\pset format wrapped
+
+SET search_path to public;
+
+\pset null '--NULL--'
+
+-- template for Postgres shortcuts.. :<shortcut>
+-- \set <shortcut> '\\\i <file>'
