@@ -12,3 +12,6 @@ SET search_path to public;
 
 -- template for Postgres shortcuts.. :<shortcut>
 -- \set <shortcut> '\\\i <file>'
+
+\timing
+\pspg --no-mouse -bX --no-commandbar --notopbar
