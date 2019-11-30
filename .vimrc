@@ -1,12 +1,7 @@
-
-set nocompatible
-
 set noesckeys
 set ttimeout
 set timeoutlen=1000
 set ttimeoutlen=5
-
-
 
 
 "////////////// Display
@@ -69,7 +64,11 @@ set expandtab       " use spaces instead of tabs
 
 set backspace=indent,eol,smart  " <Bksp> editing is unrestricted
 set history=1000
-inoremap jk <esc>               " jk is escape
+" jk is escape 
+inoremap jk <esc>
+
+" automatically remove tailing spaces from all lines when you save 
+autocmd BufWritePre *.{c,cpp,cc,h,hpp,py,m,mm,pgsql,sql} :%s/\s\+$//e
 
 "////////////// Other
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
@@ -118,3 +117,4 @@ inoremap <A-H> <C-Left>
 inoremap <A-H> <C-Right>
 
 
+set nocompatible
