@@ -116,5 +116,8 @@ nnoremap N <C-Right>
 inoremap <A-H> <C-Left>
 inoremap <A-H> <C-Right>
 
+set list listchars/tab:>-,trail:·,nbsp:·
 
 set nocompatible
+
+
