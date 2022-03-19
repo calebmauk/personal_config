@@ -14,4 +14,4 @@ SET search_path to public;
 -- \set <shortcut> '\\\i <file>'
 
 \timing
-\pspg --no-mouse -bX --no-commandbar --notopbar
+\setenv PAGER 'pspg --no-mouse -bX --no-commandbar --notopbar'
