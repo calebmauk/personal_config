@@ -45,9 +45,6 @@ set incsearch   " search as charaters are entered
 nnoremap <CR> :nohlsearch<CR><CR> 
 
 
-
-
-
 "////////////// Code
 
 set autoindent
@@ -68,7 +65,9 @@ set history=1000
 inoremap jk <esc>
 
 " automatically remove tailing spaces from all lines when you save 
-autocmd BufWritePre *.{c,cpp,cc,h,hpp,py,m,mm,pgsql,sql} :%s/\s\+$//e
+autocmd BufWritePre *.{java,lua,conf,c,cpp,cc,h,hpp,py,m,mm,pgsql,sql,vue,xml,js,md,j2} :%s/\s\+$//e
+:%s/\s\+$//e
+
 
 "////////////// Other
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
@@ -120,4 +119,4 @@ set list listchars/tab:>-,trail:·,nbsp:·
 
 set nocompatible
 
-
+let g:sql_type_default = 'pgsql'
