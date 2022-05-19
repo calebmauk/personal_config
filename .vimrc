@@ -6,6 +6,8 @@ set ttimeoutlen=5
 
 "////////////// Display
 
+set shm+=F
+
 set hidden
 syntax on       " syntax highlighting on
 let mapleader=","
@@ -23,14 +25,6 @@ set showmatch   " highlight matching [{()}]
 set vb t_vb=    " disable both audio and visual bells
 set laststatus=2
 
-filetype plugin on
-filetype indent on  " load filetype-specific indent files
-au FileType py set autoindent
-au FileType py set smartindent
-au FileType py set textwidth=79 " PEP 8 Friendly
-
-au BufReadPost *.vue set syntax=html " use html syntax highlighting for Vue files
-
 
 "////////////// Search
 
@@ -39,7 +33,6 @@ set showmatch   " highlight search matches ??
 set ignorecase  " case-insensitive search
 set smartcase   " case-sensitive search when query includes capitals
 set incsearch   " search as charaters are entered
-" :noh      removes search match highlighting
 
 " turn off search highlighting with <CR> (carriage-return)
 nnoremap <CR> :nohlsearch<CR><CR> 
@@ -56,6 +49,14 @@ set shiftwidth=4
 set tabstop=4
 set expandtab       " use spaces instead of tabs
 
+filetype plugin on
+filetype indent on  " load filetype-specific indent files
+au FileType py set autoindent
+au FileType py set smartindent
+au FileType py set textwidth=79 " PEP 8 Friendly
+
+au BufReadPost *.vue set syntax=html " use html syntax highlighting for Vue files
+
 
 "////////////// Editing
 
@@ -65,7 +66,7 @@ set history=1000
 inoremap jk <esc>
 
 " automatically remove tailing spaces from all lines when you save 
-autocmd BufWritePre *.{java,lua,conf,c,cpp,cc,h,hpp,py,m,mm,pgsql,sql,vue,xml,js,md,j2} :%s/\s\+$//e
+autocmd BufWritePre *.{java,lua,conf,c,cpp,cc,h,hpp,py,m,mm,pgsql,sql,sh,vue,xml,yml,yaml,js,md,j2} :%s/\s\+$//e
 :%s/\s\+$//e
 
 
@@ -115,7 +116,7 @@ nnoremap N <C-Right>
 inoremap <A-H> <C-Left>
 inoremap <A-H> <C-Right>
 
-set list listchars/tab:>-,trail:·,nbsp:·
+set list listchars=trail:·,nbsp:·,tab:>-
 
 set nocompatible
 
