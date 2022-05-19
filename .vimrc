@@ -55,6 +55,11 @@ au FileType py set autoindent
 au FileType py set smartindent
 au FileType py set textwidth=79 " PEP 8 Friendly
 
+au FileTYpe python setlocal autoindent smartindent expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " PEP 8 Friendly
+
+au FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+au FileType go setlocal list listchars=trail:·,nbsp:·,tab:\ 
+
 au BufReadPost *.vue set syntax=html " use html syntax highlighting for Vue files
 
 
