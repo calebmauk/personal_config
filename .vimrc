@@ -45,9 +45,9 @@ set smartindent
 set cindent
 set smarttab
 set expandtab
-set softtabstop=4
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 
 filetype plugin on
 filetype indent on  " load filetype-specific indent files
@@ -55,7 +55,7 @@ filetype indent on  " load filetype-specific indent files
 au FileType python setlocal autoindent smartindent expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " PEP 8 Friendly
 
 au FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-au FileType go setlocal list listchars=trail:·,nbsp:·,tab:\ 
+au FileType go setlocal list listchars=trail:·,nbsp:·,tab:→\ 
 
 au BufReadPost *.vue set syntax=html " use html syntax highlighting for Vue files
 
