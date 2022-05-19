@@ -39,7 +39,7 @@ export LD_LIBRARY_PATH=/opt/lib/lib:$LD_LIBRARY_PATH
 # export SYSTEMD_PAGER=
 
 # Python3 (custom compiled)
-export PYCURL_SSL_LIBRARY = openssl
+export PYCURL_SSL_LIBRARY=openssl
 export PYHOME=/opt/python3.9
 export PYTHONPATH=$PYHOME/lib:$PYTHONPATH
 export LD_RUN_PATH=$PYHOME/lib:$LD_RUN_PATH
@@ -109,3 +109,6 @@ alias dlog='tail_docker'
 alias dexec='connect_to_image'
 alias dclear='clear_exited'
 alias dreset='rm_container'
+
+# kubernetes
+alias k='kubectl'
