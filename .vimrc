@@ -46,8 +46,8 @@ set cindent
 set smarttab
 set expandtab
 set softtabstop=4
-set shiftwidth=4
 set tabstop=4
+set shiftwidth=4
 
 filetype plugin on
 filetype indent on  " load filetype-specific indent files
