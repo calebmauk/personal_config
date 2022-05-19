@@ -44,18 +44,15 @@ set autoindent
 set smartindent
 set cindent
 set smarttab
-set softtabstop=4   " tab = 4 spaces
+set expandtab
+set softtabstop=4
 set shiftwidth=4
 set tabstop=4
-set expandtab       " use spaces instead of tabs
 
 filetype plugin on
 filetype indent on  " load filetype-specific indent files
-au FileType py set autoindent
-au FileType py set smartindent
-au FileType py set textwidth=79 " PEP 8 Friendly
 
-au FileTYpe python setlocal autoindent smartindent expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " PEP 8 Friendly
+au FileType python setlocal autoindent smartindent expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79 " PEP 8 Friendly
 
 au FileType go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 au FileType go setlocal list listchars=trail:·,nbsp:·,tab:\ 
